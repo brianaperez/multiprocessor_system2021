@@ -10,18 +10,18 @@ Find the minimum number of hours required to schedule all the tasks, given that 
 
 For example, if a processor of capacity 5 is able to perform 5 tasks in the first hour, and in the second hour it is only eligible to perform 5/2 = 2 (rounded down) tasks.
 
-Input
-capacity = an array of numbers representing the capacity of each processor
+### Input
+**capacity** = an array of numbers representing the capacity of each processor
 
-tasks = the number of tasks to be completed
+**tasks** = the number of tasks to be completed
 
-Output
+### Output
 Calculate the minimum number of hours required to complete all tasks.
 
-Constraints
+### Constraints
 The number of tasks is an integer always greater than 1. The capacity of all processors is also at least 1. It is guaranteed that there is always sufficient capacity to complete all the tasks.
 
-Examples
+### Examples
 
 Example 1:
 
@@ -70,7 +70,7 @@ We put return hours after the while loop closing bracket and find the code does 
 
 #### Issues
 
-The problem with Solution v 1.0 is that it does not follow the exact process of the given example. If you debug the code using the example paramters, you will find tasks ends up being a negative value. This does not happen in the example problem and should not be considered a good solution but a starting point.
+The problem with Solution v 1.0 is that it does not follow the exact process of the given example. When tasks is found within the latest capacity vector, it is assgined to the capacitor with the same value of 1. This would make tasks go to 0 and increment hours. v 1.0 does not follow that process, it instead selects the largest element which would be 3.
 
 ### Solution v 2.0
 
@@ -86,3 +86,6 @@ The problem with Solution v 1.0 is that it does not follow the exact process of 
 
 6) Outside of the for loop, we 'return hours;' and that is it.
 
+#### Explanation
+
+Solution v 2.0 takes into account if the value of tasks can be found in the capacity vector. If tasks is found in the vector, you can easily increment hours and break the loop. You could make it to where 'tasks -= tasks' which would make tasks = 0 and not pass the conditional in else if statement. It seems easier to increment hours by 1 and break the loop as all that matters is that we return the correct amount of hours taken to complete all tasks.

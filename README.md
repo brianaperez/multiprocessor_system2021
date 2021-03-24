@@ -22,10 +22,15 @@ Constraints
 The number of tasks is an integer always greater than 1. The capacity of all processors is also at least 1. It is guaranteed that there is always sufficient capacity to complete all the tasks.
 
 Examples
+
 Example 1:
+
 Input: capacity = [3,1,7,2,4], tasks = 15
+
 Output: 4
+
 Explanation:
+
 In the first hour, assign the set of tasks to the processor with capacity 7.
 
 Once completed, the capacity of this processor drops to 7/2 = 3, and the new state becomes capacity = [3,1,3,2,4], and tasks = 8.

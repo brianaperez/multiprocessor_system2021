@@ -42,3 +42,42 @@ Assign the last task to processor with capacity 1 in the forth hour.
 
 Therefore, it took 4 hours to complete all the tasks.
 
+# My Process
+
+### Solution v 1.0
+First, I must initilze a int variable known as hours. In the solution, we will be incrementing hours by 1 as each task is completed. This will also be the variable that needs to be returned.
+
+Second, set up a while loop. The reason I chose a while loop is because the code within should only continue of there are tasks still left. 
+The condition for the while loop is set to 'tasks >= 1'.
+
+Third, find max element within the capacity vector. I initialzed a int variable known as 'max' and set it equal to _*max_element(capacity.begin(), capacity.end())_
+max_element when given a range can find the max element within that range. So for this problem, I want to pull out the max element from the capcity vector.
+
+Fourth, when max is found in the capaciy vector, subtract max from # of tasks: tasks = tasks - max;
+
+Fifth, make a for loop starting at 'int i = 0', conditional 'i < capacity.size()', and increment after operation 'i++'
+
+Sxith, within the for loop apply a if statement. The conditional will take element in capacity at index i and compare it to value of max. If the conditional is met, we must set that value at i equal to itself divided by 2;
+
+Seventh, after the closing of the foor loop increment hours by 1: 'hours++'.
+
+We put return hours after the while loop closing bracket and find the code does work but should not be considered the full solution.
+
+#### Issues
+
+The problem with Solution v 1.0 is that it does not follow the exact process of the given example. If you debug the code using the example paramters, you will find tasks ends up being a negative value. This does not happen in the example problem and should not be considered a good solution but a starting point.
+
+### Solution v 2.0
+
+1) Initialze int variable 'hours' with a value of '0'
+
+2) Create for loop with starting statement, 'int i = 0', conditional: 'i < capacity.size()', and incrementing i by 1 after operations 'i++'.
+
+3) If statement nested in for loop with conditional: 'capacity.at(i) == tasks'. If true, increment hours by 1 and break the for loop using 'break'.
+
+4) Create else if with conditional: 'tasks >= 1'. If tasks is not found in the capacity vector, we must check if tasks is a value greater than or equal to 1.
+
+5) Within the else if, apply same code from **Solution v 1.0** from Steps 3 to 7.
+
+6) Outside of the for loop, we 'return hours;' and that is it.
+

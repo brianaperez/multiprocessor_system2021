@@ -11,7 +11,7 @@ int multiprocessor_system(std::vector<int> capacity, int tasks) {
     int hours = 0;
     while(tasks >= 1){
         int max = *max_element(capacity.begin(),capacity.end()); //find max value in capacity
-        tasks = tasks - max; //decrease tasks by the max capacity value
+        tasks -= max; //decrease tasks by the max capacity value
         for(int i = 0; i < capacity.size(); i++)
             if(capacity.at(i) == max)capacity.at(i) = capacity.at(i)/2;
         hours++;

@@ -1,4 +1,4 @@
-**Amazon Online Assessment Practice 2021**
+#Amazon Online Assessment Practice 2021
 
 This repository contains my solution to the Amazon Online Assement Question on MultiProcessor System
 

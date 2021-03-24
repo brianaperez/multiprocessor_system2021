@@ -5,7 +5,7 @@ This repository contains my solution to the Amazon Online Assement Question on M
 
 Question Level: Intern
 
-Year:2020/20201
+Year:2020/2021
 
 multi_processor_systemv1_0.cpp
   This was my first try on solving the problem.
